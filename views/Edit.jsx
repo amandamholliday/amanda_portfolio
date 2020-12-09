@@ -4,7 +4,9 @@ const AppLayout = require('./layout/AppLayout.jsx');
 class Edit extends React.Component {
     render(){
         return (
-            <AppLayout></AppLayout>
+            <AppLayout>
+                
+            </AppLayout>
         )
     }
 }

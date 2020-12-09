@@ -1,5 +1,5 @@
 const React = require('react');
-
+const AppLayout = require('./layout/AppLayout.jsx');
 
 class Index extends React.Component{
     render() {
@@ -8,13 +8,18 @@ class Index extends React.Component{
             title="Amanda Holliday's Index Page"
             stylesheet="/style.css"
             js="/app.js"
-            html="/index.html"
             >
-                <ul classname="index-page">
+                {/* <ul classname="index-page">
                     {
-                        
+                        // this.props.portfolio.map((element) => {
+                        //     return (
+                        //         <li>
+                        //             THIS IS A TEST
+                        //         </li>
+                        //     )
+                        // })
                     }
-                </ul>
+                </ul> */}
             </AppLayout>
         )
     }

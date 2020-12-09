@@ -31,7 +31,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 
 
 // Connect to Mongo
-mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(MONGODB_URI,  { useNewUrlParser: true, useUnifiedTopology: true});
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
@@ -52,13 +52,19 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine());
 
 //___________________
 // Routes
 //___________________
 
-// INDEX =================================
 app.get('/' , (req, res) => {
+    res.render('Home');
+});
+
+// INDEX =================================
+app.get('/portfolio' , (req, res) => {
     res.render('Index');
 });
 

@@ -1,10 +1,10 @@
-* {
-    background-image: none;
+/* * {
+    background-color: pink;
     opacity: 10%;
 }
 
 body > nav > ul {
-    list-style: none;
+    list-style-type: none;
     display: flex;
     justify-content: space-around;
-}
+} */
