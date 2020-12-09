@@ -1,0 +1,10 @@
+* {
+    background-image: none;
+    opacity: 10%;
+}
+
+body > nav > ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}

@@ -12,6 +12,7 @@ const app = express ();
 const db = mongoose.connection;
 const show = console.log;
 show('im cool')
+const Portfolio = require('./models/portfolio.js');
 
 
 //___________________
@@ -55,9 +56,10 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 // Routes
 //___________________
-//localhost:3000 
+
+// INDEX =================================
 app.get('/' , (req, res) => {
-  res.send('Hello World!');
+    res.render('Index');
 });
 
 
