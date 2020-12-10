@@ -10,9 +10,10 @@ class Show extends React.Component {
             js="/app.js"
             >
                 <h2>Write some words that will appear on my homepage!</h2>
-                <form action="/fun" method="POST">
-                Words: <input type="text" name="words" /><br/>
+                <form action="/home" method="POST">
+                Words: <input type="text" name={this.props.funstuff.words} /><br/>
                 <input type="submit" name="" value="Post"/>
+                <button><a href="/fun/:id/edit">Edit</a></button>
              </form>
             </AppLayout>
         )

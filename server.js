@@ -61,7 +61,18 @@ app.engine('jsx', require('express-react-views').createEngine());
 
 // HOME =================================
 app.get('/home' , (req, res) => {
-    res.render('Index');
+    // res.render('Home', {lol: Fun.words});
+    // Fun.find({}, (err, allFun) => {
+    //     if(!err){
+    //         console.log(allFun);
+    //         res.render('Home', {
+    //             lol: allFun
+    //         })
+    //     } else {
+    //         res.send(err)
+    //     }
+    // })
+    res.render('Home');
 });
 
 // INDEX ================================
@@ -120,10 +131,10 @@ app.put('/fun/:id', (req, res) => {
 })
 
 // CREATE ============================
-app.post('/fun', (req, res) => {
+app.post('/home', (req, res) => {
     Fun.create(req.body, (err, createdFun) => {
         if(!err){
-            res.redirect('/fun')
+            res.redirect('/home')
         } else {
             res.send(err);
         }

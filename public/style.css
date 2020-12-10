@@ -13,8 +13,16 @@ li.nav {
     text-align: center;
     font-family: 'Prompt', sans-serif;
     display: inline;
-    padding: 75px;
+    padding: 80px;
     margin: auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+div {
+    text-align: center;
 }
 /* 
 body > nav > ul {
@@ -22,3 +30,7 @@ body > nav > ul {
     display: flex;
     justify-content: space-around;
 } */
+
+form {
+    text-align: center;
+}

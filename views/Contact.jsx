@@ -9,17 +9,7 @@ class Contact extends React.Component{
             stylesheet="/style.css"
             js="/app.js"
             >
-                {/* <ul classname="index-page">
-                    {
-                        // this.props.portfolio.map((element) => {
-                        //     return (
-                        //         <li>
-                        //             THIS IS A TEST
-                        //         </li>
-                        //     )
-                        // })
-                    }
-                </ul> */}
+                <div>Email: amandamholliday@gmail.com</div>
             </AppLayout>
         )
     }
