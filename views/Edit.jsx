@@ -4,8 +4,11 @@ const AppLayout = require('./layout/AppLayout.jsx');
 class Edit extends React.Component {
     render(){
         return (
-            <AppLayout>
-                
+            <AppLayout
+            title="A M A N D A   H O L L I D A Y"
+            stylesheet="/style.css"
+            js="/app.js"
+            >
             </AppLayout>
         )
     }

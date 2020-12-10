@@ -5,7 +5,7 @@ class Home extends React.Component {
     render() {
         return (
             <AppLayout
-            title="Amanda Holliday's Home Page"
+            title="A M A N D A   H O L L I D A Y"
             stylesheet="/style.css"
             js="/app.js"
             >

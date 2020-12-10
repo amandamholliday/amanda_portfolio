@@ -5,21 +5,21 @@ class Index extends React.Component{
     render() {
         return (
             <AppLayout
-            title="Amanda Holliday's Index Page"
+            title="A M A N D A   H O L L I D A Y"
             stylesheet="/style.css"
             js="/app.js"
             >
-                {/* <ul classname="index-page">
+                <ul classname="index-page">
                     {
-                        // this.props.portfolio.map((element) => {
-                        //     return (
-                        //         <li>
-                        //             THIS IS A TEST
-                        //         </li>
-                        //     )
-                        // })
+                        this.props.funstuff.map((fun) => {
+                            return (
+                                <li>
+                                    <a href={`/fun/${fun._id}`}>{fun.words}</a>
+                                </li>
+                            )
+                        })
                     }
-                </ul> */}
+                </ul>
             </AppLayout>
         )
     }

@@ -12,7 +12,7 @@ const app = express ();
 const db = mongoose.connection;
 const show = console.log;
 show('im cool')
-const Portfolio = require('./models/portfolio.js');
+const Fun = require('./models/funstuff.js');
 
 
 //___________________
@@ -59,16 +59,102 @@ app.engine('jsx', require('express-react-views').createEngine());
 // Routes
 //___________________
 
-app.get('/' , (req, res) => {
-    res.render('Home');
-});
-
-// INDEX =================================
-app.get('/portfolio' , (req, res) => {
+// HOME =================================
+app.get('/home' , (req, res) => {
     res.render('Index');
 });
 
+// INDEX ================================
+app.get('/fun', (req, res) => {
+    Fun.find({}, (err, allFun) => {
+        if(!err){
+            console.log(allFun);
+            res.render('Show', {
+                funstuff: allFun
+            })
+        } else {
+            res.send(err)
+        }
+    })
+})
 
+// NEW ===================================
+app.get('/fun/new', (req, res) => {
+    res.render('New');
+})
+
+// ABOUT =================================
+app.get('/about', (req, res) => {
+    res.render('About');
+})
+
+// CONTACT ===============================
+app.get('/contact', (req, res) => {
+    res.render('Contact');
+})
+
+// PROJECTS ==============================
+app.get('/projects', (req, res) => {
+    res.render('Projects');
+})
+// DELETE ================================
+app.delete('/fun/:id', (req, res) => {
+    Fun.findByIdAndRemove(req.params.id, (err, foundFun) => {
+        if(!err){
+            res.redirect('/fun')
+        } else {
+            res.send(err);
+        }
+    })
+})
+
+// UPDATE ===============================
+app.put('/fun/:id', (req, res) => {
+    Fun.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedFun) => {
+        if(!err){
+            res.redirect('/fun/');
+        } else {
+            res.send(err);
+        }
+    })
+})
+
+// CREATE ============================
+app.post('/fun', (req, res) => {
+    Fun.create(req.body, (err, createdFun) => {
+        if(!err){
+            res.redirect('/fun')
+        } else {
+            res.send(err);
+        }
+    })
+})
+
+// EDIT ==============================
+app.get('/fun/:id/edit', (req, res) => {
+    Fun.findById(req.params.id, (err, foundFun) => {
+        if(!err){
+            res.render('Edit', {
+                fun: foundFun
+            })
+        } else {
+            res.send(err);
+        }
+    })
+})
+
+// SHOW ==============================
+app.get('/fun/:id', (req, res) => {
+    Fun.findById(req.params.id, (err, foundFun) => {
+        if(!err){
+            res.render('Show', {
+                fun: foundFun
+            })
+        } else {
+            res.send(err);
+        }
+    })
+})
 
 //___________________
 //Listener
