@@ -9,12 +9,12 @@ class Home extends React.Component {
             stylesheet="/style.css"
             js="/app.js"
             >
-                {/* <div>{this.props.funstuff.map((post) => {
+                <div>{this.props.funstuff.map((post) => {
                     return (
-                    <li>This is {post}</li>
+                    <li>This is {post.words}</li>
                     )
                 })}</div>
-                {this.props.children} */}
+                {this.props.children}
             </AppLayout>
         )
     }

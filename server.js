@@ -61,18 +61,16 @@ app.engine('jsx', require('express-react-views').createEngine());
 
 // HOME =================================
 app.get('/home' , (req, res) => {
-    // res.render('Home', {lol: Fun.words});
-    // Fun.find({}, (err, allFun) => {
-    //     if(!err){
-    //         console.log(allFun);
-    //         res.render('Home', {
-    //             lol: allFun
-    //         })
-    //     } else {
-    //         res.send(err)
-    //     }
-    // })
-    res.render('Home');
+    Fun.find({}, (err, allFun) => {
+        if(!err){
+            console.log(allFun);
+            res.render('Home', {
+                funstuff: allFun
+            })
+        } else {
+            res.send(err)
+        }
+    })
 });
 
 // INDEX ================================
